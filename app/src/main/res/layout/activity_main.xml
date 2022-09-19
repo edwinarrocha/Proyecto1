@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_purple_100"
+    android:background="@color/md_purple_50"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/txt_cedula"
-        android:layout_width="295dp"
-        android:layout_height="340dp"
-        android:background="@color/md_purple_50"
+        android:id="@+id/img_fondo"
+        android:layout_width="298dp"
+        android:layout_height="296dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.396"
-        tools:srcCompat="@color/white" />
+        app:layout_constraintVertical_bias="0.403"
+        tools:srcCompat="@android:color/transparent" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -26,9 +26,9 @@
         android:layout_marginStart="102dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="103dp"
-        app:layout_constraintEnd_toEndOf="@+id/txt_cedula"
-        app:layout_constraintStart_toStartOf="@+id/txt_cedula"
-        app:layout_constraintTop_toTopOf="@+id/txt_cedula"
+        app:layout_constraintEnd_toEndOf="@+id/img_fondo"
+        app:layout_constraintStart_toStartOf="@+id/img_fondo"
+        app:layout_constraintTop_toTopOf="@+id/img_fondo"
         app:srcCompat="@mipmap/usuario" />
 
     <EditText
@@ -40,13 +40,15 @@
         android:ems="10"
         android:hint="xx-xxxx-xxxx"
         android:inputType="number|textPostalAddress"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_cedula"
-        app:layout_constraintEnd_toEndOf="@+id/txt_cedula"
-        app:layout_constraintStart_toStartOf="@+id/txt_cedula"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/img_fondo"
+        app:layout_constraintEnd_toEndOf="@+id/img_fondo"
+        app:layout_constraintStart_toStartOf="@+id/img_fondo"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btn_login"
@@ -56,11 +58,11 @@
         android:layout_marginEnd="75dp"
         android:text="INGRESAR"
         app:iconTint="@android:color/holo_blue_dark"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_cedula"
-        app:layout_constraintEnd_toEndOf="@+id/txt_cedula"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="@+id/txt_cedula"
+        app:layout_constraintBottom_toBottomOf="@+id/img_fondo"
+        app:layout_constraintEnd_toEndOf="@+id/img_fondo"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="@+id/img_fondo"
         app:layout_constraintTop_toBottomOf="@+id/txt_loginCedula"
-        app:layout_constraintVertical_bias="0.637" />
+        app:layout_constraintVertical_bias="0.402" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

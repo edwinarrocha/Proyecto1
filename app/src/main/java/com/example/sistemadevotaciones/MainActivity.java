@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         boolean[] voto_estudiante = new boolean[39];
         Arrays.fill(voto_estudiante, false);
 
+
         //Boton de Login
         login.setOnClickListener(new View.OnClickListener() {
             @Override
