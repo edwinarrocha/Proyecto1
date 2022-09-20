@@ -89,6 +89,7 @@
     </LinearLayout>
 
     <RadioGroup
+        android:id="@+id/rbg_papeleta"
         android:layout_width="129dp"
         android:layout_height="518dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -103,13 +104,13 @@
             android:textSize="24sp" />
 
         <RadioButton
-            android:id="@+id/chk_candidato"
+            android:id="@+id/chk_candidato2"
             android:layout_width="match_parent"
             android:layout_height="166dp"
             android:button="@android:drawable/btn_dialog" />
 
         <RadioButton
-            android:id="@+id/chk_candidato2"
+            android:id="@+id/chk_candidato3"
             android:layout_width="75dp"
             android:layout_height="188dp"
             android:button="@android:drawable/btn_dialog" />
@@ -137,11 +138,11 @@
         tools:srcCompat="@android:color/transparent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/cmd_confirmarVoto"
         android:layout_width="341dp"
         android:layout_height="67dp"
         android:layout_marginBottom="36dp"
-        android:text="Button"
+        android:text="VOTAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -176,7 +177,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txt_votante"
+        android:id="@+id/lbl_votante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"

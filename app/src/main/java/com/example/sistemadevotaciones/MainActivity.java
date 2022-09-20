@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.provider.SyncStateContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //recibiores
+        boolean[] val_voto = new boolean[39];
+
+        //Intent que recibe de votacion.java
+        Intent intent = getIntent();
+        Integer i_val = getIntent().getIntExtra("inice_validacion",0);
+        val_voto[i_val]= getIntent().getBooleanExtra("validacion", false);
 
         //variables para los elementos graficos
         cedula = (EditText) findViewById(R.id.txt_loginCedula);
@@ -41,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         boolean[] voto_estudiante = new boolean[39];
         Arrays.fill(voto_estudiante, false);
 
+        voto_estudiante[i_val] = val_voto[i_val];
 
         //Boton de Login
         login.setOnClickListener(new View.OnClickListener() {
@@ -52,11 +61,12 @@ public class MainActivity extends AppCompatActivity {
                     int i = Arrays.asList(cedula_estudiante).indexOf(estudiante_identidicado);
                     if (!voto_estudiante[i]){
                         Toast.makeText(getApplicationContext(),"Ya Puede Efectuar su Voto",  Toast.LENGTH_LONG).show();
-                        voto_estudiante[i] = true;
+                        //voto_estudiante[i] = true;
 
                         //Se declara el intent que enviara la cedula del usuario a la siguiente pantalla
                         Intent intent = new Intent(getApplicationContext(), votacion.class);
                         intent.putExtra("cedula", estudiante_identidicado);
+                        intent.putExtra("indice", i);
                         startActivity(intent);
                     } else {
                         Toast.makeText(getApplicationContext(),"Este Usuario ya realizo su voto",  Toast.LENGTH_LONG).show();
