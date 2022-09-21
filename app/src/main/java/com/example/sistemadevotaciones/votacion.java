@@ -73,7 +73,6 @@ public class votacion extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("validacion", validacion_voto[i]);
                     intent.putExtra("inice_validacion", i);
-
                     startActivity(intent);
 
                 } else if (eleccion_voto == R.id.chk_candidato2){
@@ -82,7 +81,6 @@ public class votacion extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("validacion", validacion_voto[i]);
                     intent.putExtra("inice_validacion", i);
-
                     startActivity(intent);
                 }else if (eleccion_voto == R.id.chk_candidato3){
                     candidato3_MartinCandenado++;
@@ -90,12 +88,14 @@ public class votacion extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("validacion", validacion_voto[i]);
                     intent.putExtra("inice_validacion", i);
+                    startActivity(intent);
                 } else{
                     voto_Nulo++;
 
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("validacion", validacion_voto[i]);
                     intent.putExtra("inice_validacion", i);
+                    startActivity(intent);
                 }
             }
         });
