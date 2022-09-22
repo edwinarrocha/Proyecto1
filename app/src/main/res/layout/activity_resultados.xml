@@ -4,4 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".resultados"/>
+    android:background="#E6D5FB"
+    tools:context=".resultados" >
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="418dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#543E7A"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@android:color/transparent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="395dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="52dp"
+        android:text="RESULTADOS DE VOTACION"
+        android:textAlignment="viewStart"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="450dp"
+        android:layout_height="493dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.63"
+        tools:srcCompat="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
