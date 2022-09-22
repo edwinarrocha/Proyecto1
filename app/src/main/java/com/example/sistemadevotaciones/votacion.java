@@ -20,7 +20,7 @@ public class votacion extends AppCompatActivity {
 
 
     //contadores de votacion
-    int candidato1_VivianValencuela = 0, candidato2_OmarAizpurua = 0, candidato3_MartinCandenado = 0, voto_Nulo =0;
+    int candidato1_VivianValencuela, candidato2_OmarAizpurua, candidato3_MartinCandenado, voto_Nulo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
