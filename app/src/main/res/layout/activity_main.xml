@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_purple_50"
+    android:background="#543E7A"
     tools:context=".MainActivity">
 
     <ImageView
@@ -14,9 +14,10 @@
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403"
+        app:layout_constraintVertical_bias="0.4"
         tools:srcCompat="@android:color/transparent" />
 
     <ImageView
@@ -29,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="@+id/img_fondo"
         app:layout_constraintStart_toStartOf="@+id/img_fondo"
         app:layout_constraintTop_toTopOf="@+id/img_fondo"
-        app:srcCompat="@mipmap/usuario" />
+        app:srcCompat="@mipmap/votar" />
 
     <EditText
         android:id="@+id/txt_loginCedula"
@@ -37,6 +38,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="148dp"
+        android:backgroundTint="#5B2153"
         android:ems="10"
         android:hint="xx-xxxx-xxxx"
         android:inputType="number|textPostalAddress"
@@ -56,13 +58,27 @@
         android:layout_height="57dp"
         android:layout_marginStart="75dp"
         android:layout_marginEnd="75dp"
+        android:backgroundTint="#8080FF"
         android:text="INGRESAR"
+        app:cornerRadius="?android:attr/windowTitleSize"
         app:iconTint="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toBottomOf="@+id/img_fondo"
         app:layout_constraintEnd_toEndOf="@+id/img_fondo"
-        app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="@+id/img_fondo"
         app:layout_constraintTop_toBottomOf="@+id/txt_loginCedula"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintVertical_bias="0.431" />
+
+    <Button
+        android:id="@+id/cmd_estadistica"
+        android:layout_width="281dp"
+        android:layout_height="66dp"
+        android:backgroundTint="#8080FF"
+        android:text="ESTADISTICA DE RESULTADOS"
+        app:cornerRadius="?android:attr/windowTitleSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_fondo"
+        app:layout_constraintVertical_bias="0.728" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

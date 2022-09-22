@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Declaracion de los elemento de la interfaz
     private EditText cedula;
-    private Button login;
+    private Button login, estadistica;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +34,17 @@ public class MainActivity extends AppCompatActivity {
         Integer i_val = getIntent().getIntExtra("inice_validacion",0);
         val_voto[i_val]= getIntent().getBooleanExtra("validacion", false);
 
+        Integer cont_1 = getIntent().getIntExtra("cont_candidato1", 0);
+        Integer cont_2 = getIntent().getIntExtra("cont_candidato2", 0);
+        Integer cont_3 = getIntent().getIntExtra("cont_candidato3", 0);
+        Integer cont_nulo = getIntent().getIntExtra("cont_nulo", 0);
+
+
+
         //variables para los elementos graficos
         cedula = (EditText) findViewById(R.id.txt_loginCedula);
         login = (Button) findViewById(R.id.btn_login);
+        estadistica = (Button) findViewById(R.id.cmd_estadistica);
 
         //Vector Cedulas de los 39 estudinates
         String[] cedula_estudiante = {"8-944-327", "3-740-1394", "20-53-4282", "8-943-1867", "8-937-503", "8-952-2444", "8-0943-012", "8-986-549"
@@ -65,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
                         //Se declara el intent que enviara la cedula del usuario a la siguiente pantalla
                         Intent intent = new Intent(getApplicationContext(), votacion.class);
-                        intent.putExtra("cedula", estudiante_identidicado);
+                        intent.putExtra("cdula", estudiante_identidicado);
                         intent.putExtra("indice", i);
                         startActivity(intent);
                     } else {
@@ -74,6 +82,21 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(),"Este Usuario No existe",  Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+
+        estadistica.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+
+                Intent send = new Intent(getApplicationContext(), resultados.class);
+
+                send.putExtra("cont_candidato1", cont_1);
+                send.putExtra("cont_candidato2", cont_2);
+                send.putExtra("cont_candidato3", cont_3);
+                send.putExtra("cont_nulo", cont_nulo);
+
+                startActivity(send);
             }
         });
     }

@@ -65,36 +65,55 @@ public class votacion extends AppCompatActivity {
 
                 int eleccion_voto =papeleta_voto.getCheckedRadioButtonId();
 
+                // se asigna al espacion en el Arrays en esa posicion de true (Estos permite que se valide si el usuario puede votar o no)
                 validacion_voto[i] = true;
 
                 if (eleccion_voto == R.id.chk_candidato1){
+                    // variable contadora de votos al candidato1_VivianValencuela
                     candidato1_VivianValencuela++;
 
+                    //intent de validacion del voto
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("validacion", validacion_voto[i]);
                     intent.putExtra("inice_validacion", i);
+                    intent.putExtra("cont_candidato1", candidato1_VivianValencuela);
+
                     startActivity(intent);
 
                 } else if (eleccion_voto == R.id.chk_candidato2){
+                    // variable contadora de votos al candidato2_OmarAizpurua
                     candidato2_OmarAizpurua++;
 
+                    // Intent de Validacion del Voto
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("validacion", validacion_voto[i]);
                     intent.putExtra("inice_validacion", i);
+                    intent.putExtra("cont_candidato2", candidato2_OmarAizpurua);
+
                     startActivity(intent);
+
+                    Intent intent1 = new Intent(getApplicationContext(), votacion.class);
                 }else if (eleccion_voto == R.id.chk_candidato3){
+                    // variable contadora de votos al candidato3_MartinCandenado
                     candidato3_MartinCandenado++;
 
+                    //Intent de Validacion del Voto
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("validacion", validacion_voto[i]);
                     intent.putExtra("inice_validacion", i);
+                    intent.putExtra("cont_candidato3", candidato3_MartinCandenado);
+
                     startActivity(intent);
                 } else{
+                    // Variable contadora de votos nulos
                     voto_Nulo++;
 
+                    // Intent de Validacion del Voto
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("validacion", validacion_voto[i]);
                     intent.putExtra("inice_validacion", i);
+                    intent.putExtra("cont_nulo", voto_Nulo);
+
                     startActivity(intent);
                 }
             }

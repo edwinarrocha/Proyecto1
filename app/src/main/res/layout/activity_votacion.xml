@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_deep_purple_50"
-    tools:context=".votacion" >
+    android:background="#E6D5FB"
+    tools:context=".votacion">
 
     <ImageView
         android:id="@+id/imageView9"
@@ -132,7 +132,7 @@
         android:layout_height="59dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
-        android:backgroundTint="#762A82"
+        android:backgroundTint="#543E7A"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@android:color/transparent" />
@@ -142,7 +142,9 @@
         android:layout_width="341dp"
         android:layout_height="67dp"
         android:layout_marginBottom="36dp"
+        android:backgroundTint="#8080FF"
         android:text="VOTAR"
+        app:cornerRadius="?android:attr/windowTitleSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
