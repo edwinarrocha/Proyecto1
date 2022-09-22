@@ -39,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
         Integer cont_3 = getIntent().getIntExtra("cont_candidato3", 0);
         Integer cont_nulo = getIntent().getIntExtra("cont_nulo", 0);
 
-
-
         //variables para los elementos graficos
         cedula = (EditText) findViewById(R.id.txt_loginCedula);
         login = (Button) findViewById(R.id.btn_login);
