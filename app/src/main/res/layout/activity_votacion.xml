@@ -139,9 +139,9 @@
 
     <Button
         android:id="@+id/cmd_confirmarVoto"
-        android:layout_width="341dp"
-        android:layout_height="67dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="161dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#8080FF"
         android:text="VOTAR"
         app:cornerRadius="?android:attr/windowTitleSize"
