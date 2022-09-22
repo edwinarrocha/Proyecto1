@@ -21,7 +21,7 @@ public class votacion extends AppCompatActivity {
 
     //contadores de votacion
     static int candidato1_VivianValencuela, candidato2_OmarAizpurua, candidato3_MartinCandenado, voto_Nulo;
-
+    static boolean[] validacion_voto = new boolean[39];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +29,8 @@ public class votacion extends AppCompatActivity {
 
 
         //Vector Validacion de voto
-        boolean[] validacion_voto = new boolean[39];
-        Arrays.fill(validacion_voto, false);
+        //boolean[] validacion_voto = new boolean[39];
+        //Arrays.fill(validacion_voto, false);
 
         //variables para los elementos graficos
         cedula_estudiante = (TextView) findViewById(R.id.lbl_votante);

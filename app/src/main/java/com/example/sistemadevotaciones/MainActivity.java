@@ -22,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
     private EditText cedula;
     private Button login, estadistica;
 
+    //8-943-1867
+
+    static boolean[] voto_estudiante = new boolean[39];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 "3-745-950"};
 
         //Vector Validacion de voto
-        boolean[] voto_estudiante = new boolean[39];
-        Arrays.fill(voto_estudiante, false);
+        //boolean[] voto_estudiante = new boolean[39];
+        //Arrays.fill(voto_estudiante, false);
 
         voto_estudiante[i_val] = val_voto[i_val];
 
@@ -67,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     int i = Arrays.asList(cedula_estudiante).indexOf(estudiante_identidicado);
                     if (!voto_estudiante[i]){
                         Toast.makeText(getApplicationContext(),"Ya Puede Efectuar su Voto",  Toast.LENGTH_LONG).show();
-                        //voto_estudiante[i] = true;
+                        voto_estudiante[i] = true;
 
                         //Se declara el intent que enviara la cedula del usuario a la siguiente pantalla
                         Intent intent = new Intent(getApplicationContext(), votacion.class);
