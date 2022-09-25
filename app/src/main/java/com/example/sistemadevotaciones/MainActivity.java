@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
                         //Se declara el intent que enviara la cedula del usuario a la siguiente pantalla
                         Intent intent = new Intent(getApplicationContext(), votacion.class);
-                        intent.putExtra("cdula", estudiante_identidicado);
+                        intent.putExtra("cedula", estudiante_identidicado);
                         intent.putExtra("indice", i);
                         startActivity(intent);
                     } else {

@@ -186,10 +186,11 @@
         android:text="usuario"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold|italic"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/imageButton3"
-        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintHorizontal_bias="0.328"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="@+id/textView5" />
 
