@@ -22,8 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText cedula;
     private Button login, estadistica;
 
-    //8-943-1867
-
+    //Declaraacioon de Vector Booleano de tipo static para conservar la integridad de los datos
     static boolean[] voto_estudiante = new boolean[39];
 
     @Override
@@ -38,11 +37,6 @@ public class MainActivity extends AppCompatActivity {
         Integer i_val = getIntent().getIntExtra("inice_validacion",0);
         val_voto[i_val]= getIntent().getBooleanExtra("validacion", false);
 
-        Integer cont_1 = getIntent().getIntExtra("cont_candidato1", 0);
-        Integer cont_2 = getIntent().getIntExtra("cont_candidato2", 0);
-        Integer cont_3 = getIntent().getIntExtra("cont_candidato3", 0);
-        Integer cont_nulo = getIntent().getIntExtra("cont_nulo", 0);
-
         //variables para los elementos graficos
         cedula = (EditText) findViewById(R.id.txt_loginCedula);
         login = (Button) findViewById(R.id.btn_login);
@@ -55,10 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 "8-980-2414", "3-742-2055", "8-942-1192","8-904-1189", "8-959-857", "8-964-1554", "8-1066-1018", "8-1055-701", "8-970-242", "3-752-1461",
                 "3-745-950"};
 
-        //Vector Validacion de voto
-        //boolean[] voto_estudiante = new boolean[39];
-        //Arrays.fill(voto_estudiante, false);
-
+        //Arreglo que reccibe el valor y posicion del la clase votacion.java
         voto_estudiante[i_val] = val_voto[i_val];
 
         //Boton de Login
@@ -92,12 +83,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view){
 
                 Intent send = new Intent(getApplicationContext(), resultados.class);
-
-                send.putExtra("cont_candidato1", cont_1);
-                send.putExtra("cont_candidato2", cont_2);
-                send.putExtra("cont_candidato3", cont_3);
-                send.putExtra("cont_nulo", cont_nulo);
-
                 startActivity(send);
             }
         });

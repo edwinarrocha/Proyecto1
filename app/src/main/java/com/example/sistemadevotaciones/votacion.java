@@ -19,18 +19,16 @@ public class votacion extends AppCompatActivity {
     private Button voto;
 
 
-    //contadores de votacion
-    static int candidato1_VivianValencuela, candidato2_OmarAizpurua, candidato3_MartinCandenado, voto_Nulo;
+    //contadores de votacion estaticos para mantener la integridad de los valores cargados
+    static int candidato1_VivianValencuela, candidato2_OmarAizpurua, candidato3_MartinCandenado, voto_Nulo, total_votos;
+
+    //Arreglo Booleano de validacion de votso estaticos para mantener la integridad de los valores
     static boolean[] validacion_voto = new boolean[39];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_votacion);
-
-
-        //Vector Validacion de voto
-        //boolean[] validacion_voto = new boolean[39];
-        //Arrays.fill(validacion_voto, false);
 
         //variables para los elementos graficos
         cedula_estudiante = (TextView) findViewById(R.id.lbl_votante);
@@ -45,14 +43,13 @@ public class votacion extends AppCompatActivity {
         // Muestra la cedula_estudiante en Pantalla
         cedula_estudiante.setText(votante);
 
+        // Manejo de Votaciones por RadioGroup
         papeleta_voto.clearCheck();
-
         papeleta_voto.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
 
             //Funcion para capturar el indice de los RadioButton
             public void onCheckedChanged(RadioGroup grupo, int id) {
-
                 RadioButton radioButton = (RadioButton)grupo.findViewById(id);
             }
         });
@@ -63,6 +60,7 @@ public class votacion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //Variable entera para capturar los indices de los radio buttons
                 int eleccion_voto =papeleta_voto.getCheckedRadioButtonId();
 
                 // se asigna al espacion en el Arrays en esa posicion de true (Estos permite que se valide si el usuario puede votar o no)
@@ -92,7 +90,6 @@ public class votacion extends AppCompatActivity {
 
                     startActivity(intent);
 
-                    Intent intent1 = new Intent(getApplicationContext(), votacion.class);
                 }else if (eleccion_voto == R.id.chk_candidato3){
                     // variable contadora de votos al candidato3_MartinCandenado
                     candidato3_MartinCandenado++;
@@ -104,6 +101,7 @@ public class votacion extends AppCompatActivity {
                     intent.putExtra("cont_candidato3", candidato3_MartinCandenado);
 
                     startActivity(intent);
+
                 } else{
                     // Variable contadora de votos nulos
                     voto_Nulo++;
@@ -116,6 +114,8 @@ public class votacion extends AppCompatActivity {
 
                     startActivity(intent);
                 }
+
+                total_votos = candidato1_VivianValencuela + candidato2_OmarAizpurua + candidato3_MartinCandenado + voto_Nulo;
             }
         });
     }

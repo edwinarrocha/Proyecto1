@@ -14,74 +14,56 @@ import org.eazegraph.lib.models.PieModel;
 
 public class resultados extends AppCompatActivity {
 
-    TextView candidato1, candidato2, candidato3, votonulo;
+    //Se declaran las variables para los textview de la tabla de conteo
+    TextView candidato1, candidato2, candidato3, votonulo,totalVoto;
+
+    //Se declara la variable que Manejara el grafico
     PieChart graficoPastel;
-    Button volver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultados);
 
+        //variables para los elementos graficos
         candidato1 = (TextView) findViewById(R.id.tv_candidato1);
         candidato2 = (TextView) findViewById(R.id.tv_candidato2);
         candidato3 = (TextView) findViewById(R.id.tv_candidato3);
         votonulo = (TextView) findViewById(R.id.tv_nulos);
+        totalVoto = (TextView) findViewById(R.id.tv_total);
 
         graficoPastel = (PieChart) findViewById(R.id.graficoPie);
 
-        //volver = (Button) findViewById(R.id.cmd_volver);
-
+        // Se declara un Intent para recibir el boton resutados de la clase MainActivity.java
         Intent intent = getIntent();
-        
-        /*Integer cont_1 = votacion.candidato1_VivianValencuela;
-        Integer cont_2 = votacion.candidato2_OmarAizpurua;
-        Integer cont_3 =  votacion.candidato3_MartinCandenado;
-        Integer cont_nulo = votacion.voto_Nulo;*/
 
-        /*Integer acum_votos = cont_1 + cont_2 + cont_3 + cont_nulo;
-
-        String cand_1 = String.valueOf(cont_1);
-        String cand_2 = String.valueOf(cont_2);
-        String cand_3 = String.valueOf(cont_3);
-        String nulo = String.valueOf(cont_nulo);
-        String votos_t = String.valueOf(acum_votos);*/
-
-        /*candidato1.setText(cand_1);
-        candidato2.setText(cand_2);
-        candidato3.setText(cand_3);
-        votonulo.setText(nulo);*/
-        
+        //Se invoca la funcion encargada de mostar los dato en la grafica
         setData();
-
-        /*volver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent volver = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(volver);
-            }
-        });*/
-
     }
 
+    // Funcion para la asignacion de los datos de la tabla
     private void setData() {
+        // Se trae por referencia de la clase votacion.java los contadores
         Integer cont_1 = votacion.candidato1_VivianValencuela;
         Integer cont_2 = votacion.candidato2_OmarAizpurua;
         Integer cont_3 =  votacion.candidato3_MartinCandenado;
         Integer cont_nulo = votacion.voto_Nulo;
+        Integer acum_total = votacion.total_votos;
 
-        // Set the percentage of language used
+        // Se asignan a los TextView los votos acumulados por los contadores
         candidato1.setText(Integer.toString(cont_1));
         candidato2.setText(Integer.toString(cont_2));
         candidato3.setText(Integer.toString(cont_3));
         votonulo.setText(Integer.toString(cont_nulo));
+        totalVoto.setText(Integer.toString(acum_total));
 
-        // Set the data and color to the pie chart
+        // Se asigna los Datos de los contadores y los colores del grafico
         graficoPastel.addPieSlice(new PieModel("Vivian Valenzuela", Integer.parseInt(candidato1.getText().toString()), Color.parseColor("#FFA726")));
         graficoPastel.addPieSlice(new PieModel("Omar Aizpurua", Integer.parseInt(candidato2.getText().toString()), Color.parseColor("#66BB6A")));
         graficoPastel.addPieSlice(new PieModel("Martin Candenado", Integer.parseInt(candidato3.getText().toString()), Color.parseColor("#EF5350")));
         graficoPastel.addPieSlice(new PieModel("Votos Nulos", Integer.parseInt(votonulo.getText().toString()), Color.parseColor("#29B6F6")));
-        // To animate the pie chart
+
+        //Da inicio a la animacion del graficoPastel
         graficoPastel.startAnimation();
     }
 }

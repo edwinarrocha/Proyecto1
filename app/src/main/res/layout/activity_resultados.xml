@@ -159,7 +159,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/details"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="285dp"
         android:layout_below="@+id/cardViewGraph"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -173,7 +173,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="268dp"
+            android:layout_height="match_parent"
             android:background="@color/color_white"
             android:orientation="vertical">
 
@@ -181,9 +181,10 @@
             <!-- programming languages text-->
 
             <!--View to display the line-->
+
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
                 android:text="CONTEO DE  VOTOS"
@@ -316,13 +317,6 @@
 
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/color_two" />
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -344,6 +338,48 @@
                 <!-- For now default set to 0-->
                 <TextView
                     android:id="@+id/tv_nulos"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="sans-serif-light"
+                    android:text="0"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/color_one"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#5B2153" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Total de Votos"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!--Text view to display the percentage -->
+                <!-- of programming language used. -->
+                <!-- For now default set to 0-->
+                <TextView
+                    android:id="@+id/tv_total"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
