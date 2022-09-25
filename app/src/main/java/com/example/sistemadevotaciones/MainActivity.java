@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         //Arreglo que reccibe el valor y posicion del la clase votacion.java
         voto_estudiante[i_val] = val_voto[i_val];
 
-        //Boton de Login
+        //Boton de Login e interaccion entre el MainActivity y el activity_votacion
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Metodo para interaccione entre el MainActivity y el activity_resultados
         estadistica.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
