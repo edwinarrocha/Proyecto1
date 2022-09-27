@@ -21,7 +21,7 @@ public class votacion extends AppCompatActivity {
 
     //contadores de votacion estaticos para mantener la integridad de los valores cargados
     static int candidato1_VivianValencuela, candidato2_OmarAizpurua, candidato3_MartinCandenado, voto_Nulo, total_votos;
-
+    static float porc_cand1, porc_cand2, porc_cand3, porc_votonulo;
     //Arreglo Booleano de validacion de votso estaticos para mantener la integridad de los valores
     static boolean[] validacion_voto = new boolean[39];
 
@@ -34,6 +34,7 @@ public class votacion extends AppCompatActivity {
         cedula_estudiante = (TextView) findViewById(R.id.lbl_votante);
         papeleta_voto = (RadioGroup) findViewById(R.id.rbg_papeleta);
         voto = (Button) findViewById(R.id.cmd_confirmarVoto);
+
 
         //Traer el indice de los arreglos cedua_estudiante y voto_estudiante
         Intent intent = getIntent();
@@ -115,8 +116,14 @@ public class votacion extends AppCompatActivity {
                     startActivity(intent);
                 }
 
+                //
                 total_votos = candidato1_VivianValencuela + candidato2_OmarAizpurua + candidato3_MartinCandenado + voto_Nulo;
+                porc_cand1 = (candidato1_VivianValencuela*100)/total_votos;
+                porc_cand2 = (candidato2_OmarAizpurua*100)/total_votos;
+                porc_cand3 = (candidato3_MartinCandenado*100)/total_votos;
+                porc_votonulo = (voto_Nulo*100)/total_votos;
             }
+
         });
     }
 }
